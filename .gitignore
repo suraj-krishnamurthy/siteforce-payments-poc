@@ -1,0 +1,8 @@
+# SiteForce POC
+node_modules/
+bin/
+obj/
+*.user
+*.suo
+.vs/
+dist/

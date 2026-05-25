@@ -1,0 +1,189 @@
+Using launch settings from D:\Workspace\Architecture\byteridge\SiteForce-POC\src\SiteForce.PaymentApi\Properties\launchSettings.json...
+Building...
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Migrations[20405]
+      No migrations were applied. The database is already up to date.
+dbug: Microsoft.Extensions.Hosting.Internal.Host[1]
+      Hosting starting
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5062
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\Workspace\Architecture\byteridge\SiteForce-POC\src\SiteForce.PaymentApi
+dbug: Microsoft.Extensions.Hosting.Internal.Host[2]
+      Hosting started
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5062/api/payments?status=Ready - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetPaymentLines", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[SiteForce.PaymentApi.DTOs.PaymentLineDto]]] GetPaymentLines(System.String, System.String, System.Nullable`1[System.Int32]) on controller SiteForce.PaymentApi.Controllers.PaymentsController (SiteForce.PaymentApi).
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (92ms) [Parameters=[@__parsedStatus_0='?' (Size = 20)], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Allowances], [p].[BreakdownJson], [p].[Deductions], [p].[GrossAmount], [p].[NetAmount], [p].[PaymentRunId], [p].[SiteName], [p].[Status], [p].[WorkerId]
+      FROM [PaymentLines] AS [p]
+      WHERE [p].[Status] = @__parsedStatus_0
+      ORDER BY [p].[SiteName], [p].[WorkerId]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SiteForce.PaymentApi.DTOs.PaymentLineDto, SiteForce.PaymentApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi) in 565.0074ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5062/api/payments?status=Ready - 200 - application/json;+charset=utf-8 629.6835ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5062/api/payments?siteName=SiteB&status=Ready - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetPaymentLines", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[SiteForce.PaymentApi.DTOs.PaymentLineDto]]] GetPaymentLines(System.String, System.String, System.Nullable`1[System.Int32]) on controller SiteForce.PaymentApi.Controllers.PaymentsController (SiteForce.PaymentApi).
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@__siteName_0='?' (Size = 200), @__parsedStatus_1='?' (Size = 20)], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Allowances], [p].[BreakdownJson], [p].[Deductions], [p].[GrossAmount], [p].[NetAmount], [p].[PaymentRunId], [p].[SiteName], [p].[Status], [p].[WorkerId]
+      FROM [PaymentLines] AS [p]
+      WHERE [p].[SiteName] = @__siteName_0 AND [p].[Status] = @__parsedStatus_1
+      ORDER BY [p].[SiteName], [p].[WorkerId]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SiteForce.PaymentApi.DTOs.PaymentLineDto, SiteForce.PaymentApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi) in 64.7085ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5062/api/payments?siteName=SiteB&status=Ready - 200 - application/json;+charset=utf-8 70.3105ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5062/api/payments - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5062/api/batches - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'SiteForce.PaymentApi.Controllers.BatchesController.GetBatches (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetPaymentLines", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[SiteForce.PaymentApi.DTOs.PaymentLineDto]]] GetPaymentLines(System.String, System.String, System.Nullable`1[System.Int32]) on controller SiteForce.PaymentApi.Controllers.PaymentsController (SiteForce.PaymentApi).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetBatches", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[SiteForce.PaymentApi.DTOs.BatchDto]]] GetBatches() on controller SiteForce.PaymentApi.Controllers.BatchesController (SiteForce.PaymentApi).
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Allowances], [p].[BreakdownJson], [p].[Deductions], [p].[GrossAmount], [p].[NetAmount], [p].[PaymentRunId], [p].[SiteName], [p].[Status], [p].[WorkerId]
+      FROM [PaymentLines] AS [p]
+      ORDER BY [p].[SiteName], [p].[WorkerId]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SiteForce.PaymentApi.DTOs.PaymentLineDto, SiteForce.PaymentApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi) in 12.1976ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5062/api/payments - 200 - application/json;+charset=utf-8 14.1796ms
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[ApprovedAt], [p].[ApprovedBy], [p].[CreatedAt], [p].[Period], [p].[SiteName], [p].[Status], [p].[TotalAmount], [p].[UploadId], [p0].[Id], [p0].[Allowances], [p0].[BreakdownJson], [p0].[Deductions], [p0].[GrossAmount], [p0].[NetAmount], [p0].[PaymentRunId], [p0].[SiteName], [p0].[Status], [p0].[WorkerId]
+      FROM [PaymentRuns] AS [p]
+      LEFT JOIN [PaymentLines] AS [p0] ON [p].[Id] = [p0].[PaymentRunId]
+      ORDER BY [p].[CreatedAt] DESC, [p].[Id]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SiteForce.PaymentApi.DTOs.BatchDto, SiteForce.PaymentApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action SiteForce.PaymentApi.Controllers.BatchesController.GetBatches (SiteForce.PaymentApi) in 112.4936ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'SiteForce.PaymentApi.Controllers.BatchesController.GetBatches (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5062/api/batches - 200 - application/json;+charset=utf-8 119.1378ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5062/api/payments - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5062/api/batches - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'SiteForce.PaymentApi.Controllers.BatchesController.GetBatches (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetBatches", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[SiteForce.PaymentApi.DTOs.BatchDto]]] GetBatches() on controller SiteForce.PaymentApi.Controllers.BatchesController (SiteForce.PaymentApi).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetPaymentLines", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[SiteForce.PaymentApi.DTOs.PaymentLineDto]]] GetPaymentLines(System.String, System.String, System.Nullable`1[System.Int32]) on controller SiteForce.PaymentApi.Controllers.PaymentsController (SiteForce.PaymentApi).
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Allowances], [p].[BreakdownJson], [p].[Deductions], [p].[GrossAmount], [p].[NetAmount], [p].[PaymentRunId], [p].[SiteName], [p].[Status], [p].[WorkerId]
+      FROM [PaymentLines] AS [p]
+      ORDER BY [p].[SiteName], [p].[WorkerId]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SiteForce.PaymentApi.DTOs.PaymentLineDto, SiteForce.PaymentApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi) in 8.17ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5062/api/payments - 200 - application/json;+charset=utf-8 8.7328ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5062/api/payments - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetPaymentLines", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[SiteForce.PaymentApi.DTOs.PaymentLineDto]]] GetPaymentLines(System.String, System.String, System.Nullable`1[System.Int32]) on controller SiteForce.PaymentApi.Controllers.PaymentsController (SiteForce.PaymentApi).
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[ApprovedAt], [p].[ApprovedBy], [p].[CreatedAt], [p].[Period], [p].[SiteName], [p].[Status], [p].[TotalAmount], [p].[UploadId], [p0].[Id], [p0].[Allowances], [p0].[BreakdownJson], [p0].[Deductions], [p0].[GrossAmount], [p0].[NetAmount], [p0].[PaymentRunId], [p0].[SiteName], [p0].[Status], [p0].[WorkerId]
+      FROM [PaymentRuns] AS [p]
+      LEFT JOIN [PaymentLines] AS [p0] ON [p].[Id] = [p0].[PaymentRunId]
+      ORDER BY [p].[CreatedAt] DESC, [p].[Id]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Allowances], [p].[BreakdownJson], [p].[Deductions], [p].[GrossAmount], [p].[NetAmount], [p].[PaymentRunId], [p].[SiteName], [p].[Status], [p].[WorkerId]
+      FROM [PaymentLines] AS [p]
+      ORDER BY [p].[SiteName], [p].[WorkerId]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SiteForce.PaymentApi.DTOs.BatchDto, SiteForce.PaymentApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action SiteForce.PaymentApi.Controllers.BatchesController.GetBatches (SiteForce.PaymentApi) in 16.5295ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'SiteForce.PaymentApi.Controllers.BatchesController.GetBatches (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5062/api/batches - 200 - application/json;+charset=utf-8 16.9258ms
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SiteForce.PaymentApi.DTOs.PaymentLineDto, SiteForce.PaymentApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi) in 4.5582ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5062/api/payments - 200 - application/json;+charset=utf-8 5.0416ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5062/api/payments - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetPaymentLines", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[SiteForce.PaymentApi.DTOs.PaymentLineDto]]] GetPaymentLines(System.String, System.String, System.Nullable`1[System.Int32]) on controller SiteForce.PaymentApi.Controllers.PaymentsController (SiteForce.PaymentApi).
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Allowances], [p].[BreakdownJson], [p].[Deductions], [p].[GrossAmount], [p].[NetAmount], [p].[PaymentRunId], [p].[SiteName], [p].[Status], [p].[WorkerId]
+      FROM [PaymentLines] AS [p]
+      ORDER BY [p].[SiteName], [p].[WorkerId]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SiteForce.PaymentApi.DTOs.PaymentLineDto, SiteForce.PaymentApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi) in 5.908ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'SiteForce.PaymentApi.Controllers.PaymentsController.GetPaymentLines (SiteForce.PaymentApi)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5062/api/payments - 200 - application/json;+charset=utf-8 6.4235ms
